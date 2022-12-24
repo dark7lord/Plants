@@ -1,0 +1,74 @@
+.service {
+  background: $bg-color;
+}
+
+.service__wrapper {
+  // outline: 1px solid blue;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  // justify-content: space-between;
+  margin: 0 auto;
+  max-width: calc($desktop-width + 2px);
+  padding: 40px $desktop-padding 120px;
+  box-sizing: border-box;
+}
+
+.service__title {
+  max-width: 306px;
+  margin-top: 0;
+  margin-right: 142px;
+  // margin-bottom: 20px;
+
+  font-family: 'Inika', serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 52px;
+  color: $green;
+}
+
+.service__list-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 38px;
+  margin: 29px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service__list-buttons-item {
+  min-width: 161px;
+  padding: 11px 41px 11px 39px; // Pixel Perfect
+  box-sizing: border-box;
+  border: 1px solid $orange;
+  font-family: 'Inika', serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: $orange;
+  background-color: transparent;
+
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: $orange;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.service__list-services {
+  width: 100%;
+  margin: 46px 0 0;
+  display: grid;
+  gap: 54px;
+  grid-template-columns: repeat(3, 330px);
+  justify-content: space-between;
+  padding: 0;
+  list-style: none;
+}
