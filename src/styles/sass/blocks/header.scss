@@ -13,12 +13,10 @@
   margin: 0 auto;
   max-width: $desktop-width;
   padding: 43px $desktop-padding;
-  outline: 1px solid blue;
   box-sizing: border-box;
 }
 
 .header__nav ul {
-  // outline: 1px solid blue;
   display: flex;
   flex-wrap: wrap;
   margin: 0;
