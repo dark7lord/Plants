@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Inika";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local("Open Sans"),
+    url("../fonts/Inika-Regular.woff2") format("woff2"),
+    url("../fonts/Inika-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inika";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local("Open Sans"),
+    url("../fonts/Inika-Bold.woff2") format("woff2"),
+    url("../fonts/Inika-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local("Open Sans"),
+    url("../fonts/Inter-Regular.woff2") format("woff2"),
+    url("../fonts/Inter-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local("Open Sans"),
+    url("../fonts/Inter-Bold.woff2") format("woff2"),
+    url("../fonts/Inter-Bold.woff") format("woff");
+}
