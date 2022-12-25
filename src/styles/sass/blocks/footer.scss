@@ -25,17 +25,11 @@
     align-items: center;
 }
 
-.footer__link {
-
-  &:hover,
-  &:focus {
-    .footer__social-link-svg {
-      color: $orange;
-      transition: color 0.3s;
-    }
-  }
+.footer__link:hover .footer__social-link-svg,
+.footer__link:focus .footer__social-link-svg {
+  color: $orange;
+  transition: color 0.3s;
 }
-
 
 .footer__link,
 .footer__copyright {
@@ -51,6 +45,10 @@
   &:hover,
   &:focus {
     color: $orange;
+  }
+
+  &:active {
+    opacity: 0.5;
   }
 }
 
