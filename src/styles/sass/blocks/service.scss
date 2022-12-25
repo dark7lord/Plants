@@ -45,6 +45,7 @@
   line-height: 26px;
   color: $orange;
   background-color: transparent;
+  outline: none;
 
   border-radius: 5px;
   cursor: pointer;
@@ -68,6 +69,12 @@
   gap: 54px;
   grid-template-columns: repeat(3, 330px);
   justify-content: space-between;
+  padding: 0;
+  list-style: none;
+}
+
+.contacts__cities {
+  margin: 0;
   padding: 0;
   list-style: none;
 }

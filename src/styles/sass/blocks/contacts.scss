@@ -73,6 +73,42 @@
   }
 }
 
+.contacts__list-cities {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 27px 35px 31px;
+  list-style: none;
+  // li + li {
+    //   margin-top: 12px;
+    // }
+  background-color: $bg-selector-green;
+}
+
+.contacts__select-city-btn {
+  width: 100%;
+  padding: 6px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $light-grey-3;
+
+  text-align: left;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: $green;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $grey-1;
+    border-bottom-color: $grey-1;
+    transition: 0.3s;
+  }
+}
+
 .contacts__cities {
-  display: none;
+  // display: none;
 }
