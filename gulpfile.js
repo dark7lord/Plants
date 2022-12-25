@@ -1,7 +1,5 @@
 import gulp from 'gulp';
 import babel from 'gulp-babel';
-import replace from 'gulp-replace';
-// import terser from 'gulp-terser';
 import sync from 'browser-sync';
 import sourcemap from 'gulp-sourcemaps';
 import rename from 'gulp-rename';
@@ -36,7 +34,6 @@ export const scripts = () => {
     .pipe(babel({
       presets: ['@babel/preset-env']
     }))
-    // .pipe(terser())
     .pipe(gulp.dest('dist'))
     .pipe(sync.stream());
 };
@@ -70,19 +67,6 @@ export const sprite = () => {
     .pipe(gulp.dest('dist/images'));
 }
 
-// Paths
-
-export const paths = () => {
-  return gulp.src('dist/*.html')
-    .pipe(replace(
-      /(<link rel="stylesheet" href=")styles\/(index.css">)/, '$1$2'
-    ))
-    .pipe(replace(
-      /(<script src=")scripts\/(index.js">)/, '$1$2'
-    ))
-    .pipe(gulp.dest('dist'));
-};
-
 // Server
 
 export const server = () => {
@@ -98,7 +82,7 @@ export const server = () => {
 // Watch
 
 export const watch = () => {
-  gulp.watch('src/*.html', gulp.series(html, paths));
+  gulp.watch('src/*.html', gulp.series(html));
   gulp.watch('src/styles/**/*.scss', gulp.series(styles));
   gulp.watch('src/scripts/**/*.js', gulp.series(scripts));
   gulp.watch('src/images/icons/*.svg', gulp.series(sprite));
@@ -118,7 +102,6 @@ export default gulp.series(
     copy,
     sprite
   ),
-  paths,
   gulp.parallel(
     watch,
     server,
