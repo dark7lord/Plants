@@ -1,10 +1,11 @@
 import gulp from 'gulp';
 import babel from 'gulp-babel';
 import replace from 'gulp-replace';
-import terser from 'gulp-terser';
+// import terser from 'gulp-terser';
 import sync from 'browser-sync';
 import sourcemap from 'gulp-sourcemaps';
-
+import rename from 'gulp-rename';
+import svgstore from 'gulp-svgstore';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 const sass = gulpSass(dartSass);
@@ -35,7 +36,7 @@ export const scripts = () => {
     .pipe(babel({
       presets: ['@babel/preset-env']
     }))
-    .pipe(terser())
+    // .pipe(terser())
     .pipe(gulp.dest('dist'))
     .pipe(sync.stream());
 };
@@ -44,8 +45,11 @@ export const scripts = () => {
 
 export const copy = () => {
   return gulp.src([
-    'src/fonts/**/*',
+    'src/fonts/**/*{woff,woff2}',
     'src/images/**/*',
+    'src/images/**/*.svg',
+    '!src/images/icons/*.svg',
+    '!src/images/icons'
   ], {
     base: 'src'
   })
@@ -54,6 +58,17 @@ export const copy = () => {
       once: true
     }));
 };
+
+// SVG Sprite
+
+export const sprite = () => {
+  return gulp.src('src/images/icons/*.svg')
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(rename('sprite.svg'))
+    .pipe(gulp.dest('dist/images'));
+}
 
 // Paths
 
@@ -86,6 +101,7 @@ export const watch = () => {
   gulp.watch('src/*.html', gulp.series(html, paths));
   gulp.watch('src/styles/**/*.scss', gulp.series(styles));
   gulp.watch('src/scripts/**/*.js', gulp.series(scripts));
+  gulp.watch('src/images/icons/*.svg', gulp.series(sprite));
   gulp.watch([
     'src/fonts/**/*',
     'src/images/**/*',
@@ -100,6 +116,7 @@ export default gulp.series(
     styles,
     scripts,
     copy,
+    sprite
   ),
   paths,
   gulp.parallel(

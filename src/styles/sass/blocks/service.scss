@@ -3,11 +3,9 @@
 }
 
 .service__wrapper {
-  // outline: 1px solid blue;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  // justify-content: space-between;
   margin: 0 auto;
   max-width: calc($desktop-width + 2px);
   padding: 40px $desktop-padding 120px;

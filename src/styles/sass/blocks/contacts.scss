@@ -1,3 +1,78 @@
 .contacts {
   background-color: $bg-color;
 }
+
+.contacts__wrapper {
+  margin: 0 auto;
+  max-width: $desktop-width;
+  min-height: 550px;
+  padding: 60px $desktop-padding 109px;
+  box-sizing: border-box;
+  outline: 1px solid red;
+
+  background-image: url("../images/contact_woman-1.png");
+  background-repeat: no-repeat;
+  background-position: calc($desktop-padding - 1px) bottom;
+}
+
+.contacts__title {
+  margin-top: 0;
+  transform: translateX(-3px);
+  // margin-bottom: 0;
+
+  font-family: 'Inika', serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 52px;
+  color: $green;
+  text-align: center;
+}
+
+.contacts__selector {
+  display: flex;
+  flex-direction: column;
+  outline: 1px solid red;
+  max-width: 450px;
+  margin-left: auto;
+
+
+}
+
+.contacts__selector-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 7px 21px 5px;
+  border: none;
+  background-color: $dark-bg-color;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: $grey-1;
+  text-align-last: left;
+  box-shadow: 0px 4px 4px rgba($black, 0.25);
+
+  cursor: pointer;
+
+  &::after {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    margin-right: 13px;
+
+    background-color: $light-grey-2;
+    border-radius: 50%;
+    content: "";
+
+    background-image: url("../images/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.contacts__cities {
+  display: none;
+}

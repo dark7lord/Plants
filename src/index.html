@@ -144,111 +144,136 @@
     </section>
 
     <section class="contacts">
-      <h2 class="contacts__title">Contacts</h2>
+      <div class="contacts__wrapper">
+        <h2 class="contacts__title">Contact us</h2>
 
-      <ul class="contacts__cities cities">
-        <li class="cities__item city">
-          <table>
-            <tr>
-              <td>City:</td>
-              <td>Yonkers, NY</td>
-            </tr>
-            <tr>
-              <td>Phone:</td>
-              <td>+1 914 678 0003</td>
-            </tr>
-            <tr>
-              <td>Office address</td>
-              <td>511 Warburton Ave</td>
-            </tr>
-          </table>
-          <button class="price__button">Call us</button>
-        </li>
-
-        <li class="cities__item city">
-          <table>
-            <tr>
-              <td>City:</td>
-              <td>Canandaigua, NY</td>
-            </tr>
-            <tr>
-              <td>Phone:</td>
-              <td>+1 585 393 0001</td>
-            </tr>
-            <tr>
-              <td>Office address</td>
-              <td>151 Charlotte Street</td>
-            </tr>
-          </table>
-          <button class="price__button">Call us</button>
-        </li>
-
-        <li class="cities__item city">
-          <table>
-            <tr>
-              <td>City:</td>
-              <td>Sherrill, NY</td>
-            </tr>
-            <tr>
-              <td>Phone:</td>
-              <td>+1 315 908 0004</td>
-            </tr>
-            <tr>
-              <td>Office address</td>
-              <td>14 WEST Noyes BLVD</td>
-            </tr>
-          </table>
-          <button class="price__button">Call us</button>
-        </li>
-        <table>
-          <tr>
-            <td>City:</td>
-            <td>Sherrill, NY</td>
-          </tr>
-          <tr>
-            <td>Phone:</td>
-            <td>+1 315 908 0004</td>
-          </tr>
-          <tr>
-            <td>Office address</td>
-            <td>14 WEST Noyes BLVD</td>
-          </tr>
-        </table>
-        <button class="price__button">Call us</button>
-        <li class="cities__item city">
-          <table>
-            <tr>
-              <td>City:</td>
-              <td>New York City</td>
-            </tr>
-            <tr>
-              <td>Phone:</td>
-              <td>+1 212 456 0002</td>
-            </tr>
-            <tr>
-              <td>Office address</td>
-              <td>9 East 91st Street</td>
-            </tr>
-          </table>
-          <button class="price__button">Call us</button>
-        </li>
-      </ul>
+        <div class="contacts__selector">
+          <button class="contacts__selector-button">City</button>
+          <ul class="contacts__cities cities">
+            <li class="cities__item city">
+              <table>
+                <tr>
+                  <td>City:</td>
+                  <td>Yonkers, NY</td>
+                </tr>
+                <tr>
+                  <td>Phone:</td>
+                  <td>+1 914 678 0003</td>
+                </tr>
+                <tr>
+                  <td>Office address</td>
+                  <td>511 Warburton Ave</td>
+                </tr>
+              </table>
+              <button>Call us</button>
+            </li>
+            <li class="cities__item city">
+              <table>
+                <tr>
+                  <td>City:</td>
+                  <td>Canandaigua, NY</td>
+                </tr>
+                <tr>
+                  <td>Phone:</td>
+                  <td>+1 585 393 0001</td>
+                </tr>
+                <tr>
+                  <td>Office address</td>
+                  <td>151 Charlotte Street</td>
+                </tr>
+              </table>
+              <button>Call us</button>
+            </li>
+            <li class="cities__item city">
+              <table>
+                <tr>
+                  <td>City:</td>
+                  <td>Sherrill, NY</td>
+                </tr>
+                <tr>
+                  <td>Phone:</td>
+                  <td>+1 315 908 0004</td>
+                </tr>
+                <tr>
+                  <td>Office address</td>
+                  <td>14 WEST Noyes BLVD</td>
+                </tr>
+              </table>
+              <button>Call us</button>
+            </li>
+            <li class="cities__item city">
+              <table>
+                <tr>
+                  <td>City:</td>
+                  <td>New York City</td>
+                </tr>
+                <tr>
+                  <td>Phone:</td>
+                  <td>+1 212 456 0002</td>
+                </tr>
+                <tr>
+                  <td>Office address</td>
+                  <td>9 East 91st Street</td>
+                </tr>
+              </table>
+              <button>Call us</button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="body__footer footer">
     <div class="footer__wrapper">
-      <div class="footer__copyright">
-        © 2022 github
-      </div>
+      <ul class="footer__copyright">
+        <li>
+          ©
+        </li>
+        <li>
+          2022
+        </li>
+        <li>
+          <a href="https://github.com/dark7lord" class="footer__link">github</a>
+        </li>
+
+      </ul>
       <div class="footer__link-to-course">
-        <a href="#" class="footer__link">github</a>
+        <a href="https://rs.school/js-stage0/" class="footer__link">Rolling Scopes School</a>
       </div>
-      <ul class="social">
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Pinterest</a></li>
+      <ul class="footer__social">
+        <li>
+          <a class="footer__link" href="#">
+            <span class="visually-hidden">Instagram</span>
+            <svg class="footer__social-link-svg" width="32" height="32">
+              <use href="images/sprite.svg#icon_instagram">
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="footer__link" href="#">
+            <span class="visually-hidden">Facebook</span>
+            <svg class="footer__social-link-svg" width="32" height="32">
+              <use href="images/sprite.svg#icon_facebook">
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="footer__link" href="#">
+            <span class="visually-hidden">Twitter</span>
+            <svg class="footer__social-link-svg" width="32" height="32">
+              <use href="images/sprite.svg#icon_twitter">
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="footer__link" href="#">
+            <span class="visually-hidden">Pinterest</span>
+            <svg class="footer__social-link-svg" width="32" height="32">
+              <use href="images/sprite.svg#icon_pinterest">
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
