@@ -34,8 +34,6 @@
   outline: 1px solid red;
   max-width: 450px;
   margin-left: auto;
-
-
 }
 
 .contacts__selector-button {
@@ -79,9 +77,6 @@
   margin: 0;
   padding: 27px 35px 31px;
   list-style: none;
-  // li + li {
-    //   margin-top: 12px;
-    // }
   background-color: $bg-selector-green;
 }
 
@@ -110,5 +105,5 @@
 }
 
 .contacts__cities {
-  // display: none;
+  margin-top: 60px;
 }
