@@ -70,11 +70,14 @@ input[type=radio].visually-hidden {
 
 .header__logo {
   transform: translateY(-3.5px);
+  border-bottom: 1px solid transparent;
+  margin-bottom: -1px;
+  outline: none;
+  transition: border 0.3s;
 }
 .header__logo:hover, .header__logo:focus {
-  border-bottom: 1px solid #e06733;
-  margin-bottom: -1px;
-  transition: border 0.1s;
+  border-color: #e06733;
+  transition: border 0.3s;
 }
 .header__logo:active {
   opacity: 0.5;
@@ -164,7 +167,7 @@ input[type=radio].visually-hidden {
 .welcome__link-btn {
   display: inline-flex;
   margin-left: 1px;
-  padding: 10px 26px;
+  padding: 10px 24px;
   border: 2px solid #e06733;
   font-size: 16px;
   line-height: 20px;
@@ -172,6 +175,8 @@ input[type=radio].visually-hidden {
   background-color: transparent;
   border-radius: 10px;
   color: #000000;
+  box-sizing: border-box;
+  outline: none;
 }
 .welcome__link-btn:hover, .welcome__link-btn:focus {
   color: #ffffff;
@@ -393,11 +398,15 @@ input[type=radio].visually-hidden {
   color: #e06733;
   background-color: transparent;
   outline: none;
+  transition: 0.3s;
 }
 .prices__link-button:hover, .prices__link-button:focus {
   background-color: #e06733;
   color: #ffffff;
-  transition: color 0.3s;
+  transition: 0.3s;
+}
+.prices__link-button:active {
+  opacity: 0.5;
 }
 
 .price {
@@ -407,9 +416,11 @@ input[type=radio].visually-hidden {
   box-sizing: border-box;
   background-color: #edf2ec;
   background-color: #d6e7d2;
+  outline: none;
 }
 .price--closed {
   background-color: #edf2ec;
+  transition: background-color 0.5s;
 }
 .price--closed .price__text,
 .price--closed .price__cost-hour,
@@ -419,6 +430,13 @@ input[type=radio].visually-hidden {
 .price--closed .price__title::after {
   background-color: #d9d9d9;
   background-image: url("../images/arrow-down.svg");
+}
+.price--closed:hover, .price--closed:focus {
+  background-color: #d6e7d2;
+  transition: background-color 0.3s;
+}
+.price--closed:active {
+  opacity: 0.5;
 }
 
 .price__title {
@@ -535,6 +553,8 @@ input[type=radio].visually-hidden {
   text-align-last: left;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  transition: background-color 0.3s;
+  outline: none;
 }
 .contacts__selector-button::after {
   display: inline-flex;
@@ -547,6 +567,13 @@ input[type=radio].visually-hidden {
   background-image: url("../images/arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
+}
+.contacts__selector-button:hover, .contacts__selector-button:focus {
+  background-color: #c1e698;
+  transition: background-color 0.3s;
+}
+.contacts__selector-button:active {
+  opacity: 0.5;
 }
 
 .contacts__list-cities {

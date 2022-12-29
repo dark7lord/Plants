@@ -5,9 +5,11 @@
   box-sizing: border-box;
   background-color: $bg-color;
   background-color: $dark-bg-color;
+  outline: none;
 
   &--closed {
     background-color: $bg-color;
+    transition: background-color 0.5s;
 
     .price__text,
     .price__cost-hour,
@@ -19,7 +21,18 @@
       background-color: $light-grey-3;
       background-image: url("../images/arrow-down.svg");
     }
+
+    &:hover,
+    &:focus {
+      background-color: $dark-bg-color;
+      transition: background-color 0.3s;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
   }
+
 }
 
 .price__title {

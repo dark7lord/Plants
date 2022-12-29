@@ -77,11 +77,16 @@
   // text-decoration: none;
   background-color: transparent;
   outline: none;
+  transition: 0.3s;
 
   &:hover,
   &:focus {
     background-color: $orange;
     color: $white;
-    transition: color 0.3s;
+    transition: 0.3s;
+  }
+
+  &:active {
+    opacity: 0.5;
   }
 }

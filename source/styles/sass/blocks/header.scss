@@ -4,12 +4,15 @@
 
 .header__logo {
   transform: translateY(-3.5px); // Pixel Perfect
+  border-bottom: 1px solid transparent;
+  margin-bottom: -1px;
+  outline: none;
+  transition: border 0.3s;
 
   &:hover,
   &:focus {
-    border-bottom: 1px solid $orange;
-    margin-bottom: -1px;
-    transition: border 0.1s;
+    border-color: $orange;
+    transition: border 0.3s;
   }
 
   &:active {
