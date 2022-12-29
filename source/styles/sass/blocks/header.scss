@@ -1,0 +1,61 @@
+.header {
+  background-color: $bg-color;
+}
+
+.header__logo {
+  transform: translateY(-3.5px); // Pixel Perfect
+
+  &:hover,
+  &:focus {
+    border-bottom: 1px solid $orange;
+    margin-bottom: -1px;
+    transition: border 0.1s;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: $desktop-width;
+  padding: 43px $desktop-padding;
+  box-sizing: border-box;
+}
+
+.header__nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  column-gap: 47px;
+}
+
+.header__nav-link {
+  font-family: 'Inika', serif;
+  font-size: 16px;
+  line-height: 50px;
+  font-weight: 700;
+  color: $black-links-nav;
+  text-decoration: none;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    color: $orange;
+    transition: color 0.3s;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &--active {
+    color: $orange;
+  }
+}

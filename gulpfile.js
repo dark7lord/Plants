@@ -10,31 +10,34 @@ const sass = gulpSass(dartSass);
 
 // HTML
 
+const dist = 'plants';
+const src = 'source'
+
 export const html = () => {
-  return gulp.src('src/*.html')
-    .pipe(gulp.dest('dist'))
+  return gulp.src(`${src}/*.html`)
+    .pipe(gulp.dest(dist))
     .pipe(sync.stream());
 };
 
 // Styles
 
 export const styles = () => {
-  return gulp.src('src/styles/sass/style.scss')
+  return gulp.src(`${src}/styles/sass/style.scss`)
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(sourcemap.write('.'))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest(`${dist}/css`))
     .pipe(sync.stream());
 }
 
 // Scripts
 
 export const scripts = () => {
-  return gulp.src('src/scripts/index.js')
+  return gulp.src(`${src}/scripts/index.js`)
     .pipe(babel({
       presets: ['@babel/preset-env']
     }))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest(dist))
     .pipe(sync.stream());
 };
 
@@ -42,15 +45,15 @@ export const scripts = () => {
 
 export const copy = () => {
   return gulp.src([
-    'src/fonts/**/*{woff,woff2}',
-    'src/images/**/*',
-    'src/images/**/*.svg',
-    '!src/images/icons/*.svg',
-    '!src/images/icons'
+    `${src}/fonts/**/*{woff,woff2}`,
+    `${src}/images/**/*`,
+    `${src}/images/**/*.svg`,
+    `!${src}/images/icons/*.svg`,
+    `!${src}/images/icon`
   ], {
-    base: 'src'
+    base: src
   })
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest(dist))
     .pipe(sync.stream({
       once: true
     }));
@@ -59,12 +62,12 @@ export const copy = () => {
 // SVG Sprite
 
 export const sprite = () => {
-  return gulp.src('src/images/icons/*.svg')
+  return gulp.src(`${src}/images/icons/*.svg`)
     .pipe(svgstore({
       inlineSvg: true
     }))
     .pipe(rename('sprite.svg'))
-    .pipe(gulp.dest('dist/images'));
+    .pipe(gulp.dest(`${dist}/images`));
 }
 
 // Server
@@ -74,7 +77,7 @@ export const server = () => {
     ui: false,
     notify: false,
     server: {
-      baseDir: 'dist'
+      baseDir: dist
     }
   });
 };
@@ -82,15 +85,25 @@ export const server = () => {
 // Watch
 
 export const watch = () => {
-  gulp.watch('src/*.html', gulp.series(html));
-  gulp.watch('src/styles/**/*.scss', gulp.series(styles));
-  gulp.watch('src/scripts/**/*.js', gulp.series(scripts));
-  gulp.watch('src/images/icons/*.svg', gulp.series(sprite));
+  gulp.watch(`${src}/*.html`, gulp.series(html));
+  gulp.watch(`${src}/styles/**/*.scss`, gulp.series(styles));
+  gulp.watch(`${src}/scripts/**/*.js`, gulp.series(scripts));
+  gulp.watch(`${src}/images/icons/*.svg`, gulp.series(sprite));
   gulp.watch([
-    'src/fonts/**/*',
-    'src/images/**/*',
+    `${src}/fonts/**/*`,
+    `${src}/images/**/*`,
   ], gulp.series(copy));
 };
+
+export const build = () => {
+  gulp.parallel(
+    html,
+    styles,
+    scripts,
+    copy,
+    sprite
+  )
+}
 
 // Default
 

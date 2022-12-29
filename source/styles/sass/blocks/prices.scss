@@ -1,0 +1,87 @@
+// .prices {
+//   outline: 1px solid grey;
+// }
+
+.prices__wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 0 auto;
+  max-width: $desktop-width;
+  padding: 40px $desktop-padding 129px;
+  box-sizing: border-box;
+
+  background-image: url("../images/leafs-2.png");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 100px) calc(100% - 108px);
+}
+
+.prices__inner-call-us {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 452px;
+}
+
+.prices__title {
+  margin-top: 0;
+  margin-bottom: 60px;
+
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: $black;
+}
+
+.prices__list {
+  transform: translateX(-2px); // Pixel Perfect
+  padding: 33px 41px;
+  margin: 0;
+  list-style: none;
+
+  border: 1px solid $light-grey;
+  border-radius: 20px;
+}
+
+.prices__list-item + .prices__list-item {
+  margin-top: 32px;
+}
+
+.prices__call-us-text {
+  margin-top: 0;
+
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  text-align: right;
+  color: $black;
+
+  .prices__call-us-text-green {
+    color: $green;
+  }
+}
+
+.prices__link-button {
+  display: inline-flex;
+  padding: 11px 32px;
+  border: 1px solid $orange;
+  border-radius: 5px;
+  text-align: right;
+
+  font-family: 'Inika', serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  color: $orange;
+  // text-decoration: none;
+  background-color: transparent;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    background-color: $orange;
+    color: $white;
+    transition: color 0.3s;
+  }
+}
