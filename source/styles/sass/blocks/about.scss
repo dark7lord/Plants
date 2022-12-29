@@ -1,0 +1,38 @@
+.about__wrapper {
+  margin: 0 auto;
+  max-width: $desktop-width;
+  padding: 161px $desktop-padding 133px;
+  box-sizing: border-box;
+
+  background-image: url("../images/houseplant-1.png");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 109px) 93px;
+}
+
+.about__inner {
+  transform: translateX(-1px); // Pixel Perfect
+  max-width: 605px;
+}
+
+.about__title {
+  max-width: 463px;
+  margin-top: 0;
+  margin-bottom: 38px;
+
+  font-family: 'Inika', serif;
+  font-size: 40px;
+  line-height: 52px;
+  font-weight: 400;
+  color: $green;
+
+  .about__title-orange {
+    color: $orange;
+  }
+}
+
+.about__text {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  color: $grey-2;
+}
