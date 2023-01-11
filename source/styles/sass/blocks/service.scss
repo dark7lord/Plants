@@ -10,6 +10,10 @@
   max-width: calc($desktop-width + 2px);
   padding: 40px $desktop-padding 120px;
   box-sizing: border-box;
+
+  @media (max-width: $tablet-width) {
+    padding: 60px $tablet-padding 70px;
+  }
 }
 
 .service__title {
@@ -23,6 +27,12 @@
   font-size: 40px;
   line-height: 52px;
   color: $green;
+
+  @media (max-width: $tablet-width) {
+    font-size: 35px;
+    line-height: 46px;
+    margin-bottom: 13px;
+  }
 }
 
 .service__list-buttons {
@@ -63,14 +73,33 @@
 }
 
 .service__list-services {
+  // max-width: 1222px;
   width: 100%;
-  margin: 46px 0 0;
+  margin: 46px 0px 0;
   display: grid;
   gap: 54px;
-  grid-template-columns: repeat(3, 330px);
+  grid-template-columns: repeat(auto-fit, 330px);
+  // justify-content: center;
   justify-content: space-between;
   padding: 0;
   list-style: none;
+  box-sizing: border-box;
+
+  li {
+    justify-self: center;
+  }
+
+  // Моя вольность, но нужная эстетичная перестройка сетки
+  @media (max-width: calc($desktop-width - 1px)) and (min-width: $tablet-width) {
+    justify-content: center;
+  }
+
+  @media (max-width: $tablet-width) {
+    grid-template-columns: repeat(auto-fit, 281px);
+    justify-content: space-between;
+    gap: 38px;
+    margin-top: 39px;
+  }
 }
 
 .contacts__cities {

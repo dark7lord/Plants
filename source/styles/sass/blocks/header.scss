@@ -18,16 +18,23 @@
   &:active {
     opacity: 0.5;
   }
+
 }
 
 .header__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  column-gap: 30px;
   margin: 0 auto;
   max-width: $desktop-width;
   padding: 43px $desktop-padding;
   box-sizing: border-box;
+
+  @media (max-width: $tablet-width) {
+    padding: 35px $tablet-padding;
+    transform: translate(-2px, 1px); // Pixel Perfect
+  }
 }
 
 .header__nav ul {

@@ -6,6 +6,13 @@
   margin: 0 auto;
   max-width: $desktop-width;
   box-sizing: border-box;
+
+  @media (max-width: $tablet-width) {
+    flex-direction: column;
+    align-items: center;
+    padding: 33px $tablet-padding 30px;
+    row-gap: 16px;
+  }
 }
 
 .footer__copyright,
@@ -17,6 +24,26 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  // line-height: 24px;
+
+  @media (max-width: $tablet-width) {
+    // gap: 22px;
+
+  }
+}
+
+.footer__copyright {
+  @media (max-width: $tablet-width) {
+    align-items: center;
+    gap: 22px;
+    transform: translateX(-2px);
+  }
+}
+
+.footer__social {
+  @media (max-width: $tablet-width) {
+    margin-top: 9px;
+  }
 }
 
 .footer__social .footer__link {
@@ -37,6 +64,10 @@
   line-height: 50px;
   color: $black;
   transition: color 0.3s;
+
+  @media (max-width: $tablet-width) {
+    line-height: 24px;
+  }
 }
 
 .footer__link {
@@ -56,4 +87,8 @@
 .footer__link-to-course {
   padding-left: 20px;
   margin: 0 20px;
+
+  @media (max-width: $tablet-width) {
+    padding-left: 0;
+  }
 }
