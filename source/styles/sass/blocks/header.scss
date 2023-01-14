@@ -1,5 +1,35 @@
 .header {
   background-color: $bg-color;
+
+  .header__btn-toggle {
+    display: none;
+  }
+
+  @media (max-width: $mobile-width) {
+    .header__btn-toggle {
+      display: flex;
+    }
+
+    &--no-js {
+      .header__btn-toggle {
+        display: none;
+      }
+    }
+
+    // .header__nav {
+    //   // opacity: 1;
+    //   // height: auto;
+    // }
+
+    &--closed {
+      .header__nav {
+        // Нужно придумать более продуманную анимацию
+        animation: test 0.3s linear;
+        display: none;
+      }
+    }
+
+  }
 }
 
 .header__logo {
@@ -19,6 +49,11 @@
     opacity: 0.5;
   }
 
+  @media (max-width: $mobile-width) {
+    display: flex;
+    align-items: center;
+    transform: translateY(0);
+  }
 }
 
 .header__wrapper {
@@ -31,9 +66,54 @@
   padding: 43px $desktop-padding;
   box-sizing: border-box;
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: $tablet-width-max) {
     padding: 35px $tablet-padding;
     transform: translate(-2px, 1px); // Pixel Perfect
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding: 35px calc($mobile-padding - 1px);
+    transform: translate(0);
+  }
+
+  @media (max-width: $mobile-width) {
+    flex-wrap: wrap;
+  }
+}
+
+.header__btn-toggle {
+  width: 42px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  svg {
+    width: 100%;
+    transform: scale(1.05);
+  }
+}
+
+.header__nav {
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    margin-top: 15px;
+
+    ul {
+      flex-direction: column;
+      align-items: center;
+      border-bottom: 1px solid $green-2;
+      border-top: 1px solid $green-2;
+    }
+
+    .header__nav-link {
+      line-height: 30px;
+    }
+
+    animation: 1s test;
   }
 }
 
@@ -50,7 +130,7 @@
   font-family: 'Inika', serif;
   font-size: 16px;
   line-height: 50px;
-  font-weight: 700;
+  font-weight: 400;
   color: $black-links-nav;
   text-decoration: none;
   outline: none;
@@ -66,6 +146,25 @@
   }
 
   &--active {
+    font-weight: 700;
     color: $orange;
+  }
+}
+
+@keyframes test {
+  0% {
+    overflow: hidden;
+    height: 0px;
+    transform: translateY(0);
+  }
+
+  // 50% {
+  //   height: 100px;
+  //   // transform: translateY(50%);
+  // }
+
+  100% {
+    height: 150px;
+    color: transparent;
   }
 }

@@ -35,3 +35,15 @@ console.log(`\
 
 Score: 110
 `)
+
+const header = document.querySelector('.header--no-js');
+const btnHeaderToggle = document.querySelector('.header__btn-toggle');
+console.log(header);
+
+if (header) {
+  header.classList.remove('header--no-js');
+}
+
+btnHeaderToggle.addEventListener('click', (evt) => {
+  header.classList.toggle('header--closed')
+})
