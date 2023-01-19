@@ -7,16 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="images/logo_favicon.svg" type="image/svg">
-  <script src="index.js"></script>
+  <script defer src="index.js"></script>
   <title>Plants</title>
 </head>
 
 <body class="body">
-  <header class="body__header header">
+  <header class="body__header header header--no-js">
     <div class="header__wrapper">
       <a href="#" class="header__logo">
         <img src="images/logo.svg" alt="Plants" width="81" height="23">
       </a>
+      <button class="header__btn-toggle">
+        <span class="visually-hidden">Открыть / закрыть меню</span>
+        <svg width="40" height="24" stroke="grey" viewBox="0 0 40 26">
+          <use href="images/sprite.svg#icon_burger"></use>
+        </svg>
+      </button>
       <nav class="header__nav">
         <ul>
           <li><a href="#welcome" class="header__nav-link header__nav-link--active">Home</a></li>

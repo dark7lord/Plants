@@ -10,6 +10,14 @@
   max-width: calc($desktop-width + 2px);
   padding: 40px $desktop-padding 120px;
   box-sizing: border-box;
+
+  @media (max-width: $tablet-width-max) {
+    padding: 60px $tablet-padding 70px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding: 30px $mobile-padding 28px;
+  }
 }
 
 .service__title {
@@ -23,6 +31,18 @@
   font-size: 40px;
   line-height: 52px;
   color: $green;
+
+  @media (max-width: $tablet-width-max) {
+    font-size: 35px;
+    line-height: 46px;
+    margin-bottom: 13px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    font-size: 25px;
+    line-height: 33px;
+    margin-bottom: 9px;
+  }
 }
 
 .service__list-buttons {
@@ -32,6 +52,10 @@
   margin: 29px 0 0;
   padding: 0;
   list-style: none;
+
+  @media (max-width: $mobile-width-max) {
+    gap: 9px 10px;
+  }
 }
 
 .service__list-buttons-item {
@@ -60,17 +84,43 @@
   &:active {
     opacity: 0.5;
   }
+
+  @media (max-width: $mobile-width-max) {
+    min-width: 121px;
+    padding: 7px 28px 6px;
+    font-size: 15px;
+    line-height: 20px;
+  }
 }
 
 .service__list-services {
+  // max-width: 1222px;
   width: 100%;
-  margin: 46px 0 0;
+  margin: 46px 0px 0;
   display: grid;
   gap: 54px;
-  grid-template-columns: repeat(3, 330px);
+  grid-template-columns: repeat(auto-fit, 330px);
   justify-content: space-between;
   padding: 0;
   list-style: none;
+  box-sizing: border-box;
+
+  li {
+    justify-self: center;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    grid-template-columns: repeat(auto-fit, 281px);
+    justify-content: space-between;
+    gap: 38px;
+    margin-top: 39px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    grid-template-columns: minmax(1fr, 279px);
+    row-gap: 34px;
+    justify-content: center;
+  }
 }
 
 .contacts__cities {

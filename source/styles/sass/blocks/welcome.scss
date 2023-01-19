@@ -11,11 +11,28 @@
   background-image: url("../images/leafs.png");
   background-repeat: no-repeat;
   background-position: calc(50% - 390px) 51px;
+
+  @media (max-width: $tablet-width-max) {
+    padding: 38px calc($tablet-padding - 1px) 70px; // Perfect Pixel
+    background-size: 289px auto;
+    background-position: calc(100% - $tablet-padding + 3px) 31.5px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding: 28px $mobile-padding 24px;
+    background-image: none;
+  }
 }
 
 .welcome__inner {
   max-width: 549px;
   margin-left: auto;
+
+  @media (max-width: $tablet-width-max) {
+    max-width: 346px;
+    margin-left: 0;
+    margin-right: auto;
+  }
 }
 
 .welcome__title {
@@ -30,6 +47,18 @@
   .welcome__title-green {
     color: $green;
   }
+
+  @media (max-width: $tablet-width-max) {
+    margin-bottom: 30px;
+    font-size: 35px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-bottom: 20px;
+    font-size: 25px;
+    line-height: 35px;
+    transform: translate(0);
+  }
 }
 
 .welcome__text {
@@ -40,6 +69,18 @@
   line-height: 35px;
   font-weight: 400;
   color: $grey-2;
+
+  @media (max-width: $tablet-width-max) {
+    padding: 0 6px;
+    margin-bottom: 35px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding: 0;
+    margin-bottom: 26px;
+  }
 }
 
 .welcome__link-btn {
@@ -62,9 +103,17 @@
     color: $white;
     background-color: $orange;
     transition: color 0.3s;
+    cursor: pointer;
   }
 
   &:active {
     opacity: 0.5;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    font-size: 10px;
+    line-height: 20px;
+    padding: 5px 15px;
+    margin-left: 0; // PP
   }
 }

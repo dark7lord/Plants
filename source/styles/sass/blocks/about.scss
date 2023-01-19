@@ -7,11 +7,27 @@
   background-image: url("../images/houseplant-1.png");
   background-repeat: no-repeat;
   background-position: calc(100% - 109px) 93px;
+
+  @media (max-width: $tablet-width-max) {
+    padding: 40px $tablet-padding 401px;
+    background-size: 250px 258px;
+    background-position: center calc(100% - 95px);
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding: 30px $mobile-padding 167px;
+    background-size: 150px auto;
+    background-position: center calc(100% - 27px);
+  }
 }
 
 .about__inner {
   transform: translateX(-1px); // Pixel Perfect
   max-width: 605px;
+
+  @media (max-width: $tablet-width-max) {
+    max-width: 100%;
+  }
 }
 
 .about__title {
@@ -28,6 +44,20 @@
   .about__title-orange {
     color: $orange;
   }
+
+  @media (max-width: $tablet-width-max) {
+    margin: 0 auto 50px;
+    max-width: 423px;
+    font-size: 35px;
+    line-height: 46px;
+    text-align: center;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-bottom: 13px;
+    font-size: 25px;
+    line-height: 33px;
+  }
 }
 
 .about__text {
@@ -35,4 +65,14 @@
   line-height: 30px;
   font-weight: 400;
   color: $grey-2;
+
+  @media (max-width: $tablet-width-max) {
+    transform: translateX(1px);
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-top: 0;
+    font-size: 15px;
+    line-height: 25px;
+  }
 }

@@ -5,7 +5,16 @@
   min-height: 100vw;
   font-family: 'Inter', sans-serif;
 
+
   .body__main {
-      flex-grow: 1;
+    flex-grow: 1;
+  }
+
+  @media (max-width: $mobile-width) {
+    position: relative;
+
+    .body__header {
+      z-index: 1;
+    }
   }
 }
