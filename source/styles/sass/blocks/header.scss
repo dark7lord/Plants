@@ -7,7 +7,36 @@
 
   @media (max-width: $mobile-width) {
     .header__btn-toggle {
+      position: relative;
       display: flex;
+      z-index: 1;
+      outline: none;
+
+      svg {
+        transform: scaleY(0);
+        transition: transform 0.3s;
+      }
+
+      &::before {
+        position: absolute;
+        width: 44px;
+        height: 2px;
+        content: "";
+        background-color: $grey-1;
+        opacity: 1;
+        transform: translate(-1px, 11px) rotate(27deg);
+        transition: opacity 0.7s, transform 0.2s 0.5s;
+      }
+      &::after {
+        position: absolute;
+        width: 44px;
+        height: 2px;
+        content: "";
+        background-color: $grey-1;
+        opacity: 1;
+        transform: translate(-1px, 11px) rotate(-27deg);
+        transition: opacity 0.7s, transform 0.2s 0.5s;
+      }
     }
 
     &--no-js {
@@ -16,19 +45,71 @@
       }
     }
 
-    // .header__nav {
-    //   // opacity: 1;
-    //   // height: auto;
-    // }
+    .header__logo {
+      z-index: 1;
+    }
 
-    &--closed {
-      .header__nav {
-        // Нужно придумать более продуманную анимацию
-        animation: test 0.3s linear;
-        display: none;
+    // при таком варианте не работает анимация
+    // с другой стороны требования на случай неработы js нет
+    // &:not(.header--no-js) .header__nav {
+    .header__nav {
+      // z-index: 1;
+      // TODO: понять бы почему нет фиксации
+      // относительно вьюпорта
+      // position: fixed;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 0;
+      margin-top: 0;
+      left: 0;
+      right: 0;
+      max-width: 380px;
+      height: 100vh;
+      min-height: 50px;
+      // background-color: rgba(black, 0.6);
+      background-image:
+        linear-gradient(rgba(black, 0.6), transparent);
+      animation: 1s openNav;
+
+      ul {
+        max-height: auto;
+        padding: 96px 0 30px;
+        background-color: $bg-color;
       }
     }
 
+    &--closed {
+      .header__btn-toggle {
+        z-index: 2;
+
+        svg {
+          transform: scaleY(1);
+          transition: transform 0.3s 0.5s;
+        }
+
+        &::before {
+          opacity: 0;
+          transform: translate(-1px, 11px) rotate(0deg);
+          transition: opacity 0.2s, transform 0.2s;
+        }
+
+        &::after {
+          opacity: 0;
+          transform: translate(-1px, 11px) rotate(0deg);
+          transition: opacity 0.2s, transform 0.2s;
+        }
+      }
+
+      .header__nav {
+        // display: none;
+        opacity: 0;
+        animation: 1s closeNav;
+        height: auto;
+        top: -300%;
+        transition: opacity 0.3s;
+      }
+    }
   }
 }
 
@@ -90,10 +171,25 @@
   border: none;
   margin: 0;
   padding: 0;
+  cursor: pointer;
 
   svg {
     width: 100%;
     transform: scale(1.05);
+  }
+
+  &:hover,
+  &:focus {
+    &::before,
+    &::after {
+      background-color: $grey-2;
+    }
+  }
+  &:active {
+    &::before,
+    &::after {
+      background-color: $orange;
+    }
   }
 }
 
@@ -105,15 +201,11 @@
     ul {
       flex-direction: column;
       align-items: center;
-      border-bottom: 1px solid $green-2;
-      border-top: 1px solid $green-2;
     }
 
     .header__nav-link {
       line-height: 30px;
     }
-
-    animation: 1s test;
   }
 }
 
@@ -151,20 +243,50 @@
   }
 }
 
-@keyframes test {
-  0% {
-    overflow: hidden;
-    height: 0px;
-    transform: translateY(0);
+.header__btn-toggle {
+  display: flex;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+    transition: opacity 0.3s;
   }
 
-  // 50% {
-  //   height: 100px;
-  //   // transform: translateY(50%);
-  // }
+  &:active {
+    opacity: 0.3;
+    transition: opacity 0.3s;
+  }
+  transition: opacity 0.3s;
+}
+
+@keyframes openNav {
+  0% {
+    height: 0;
+    top: -200%;
+    background-image: none;
+  }
 
   100% {
-    height: 150px;
-    color: transparent;
+    height: 100vh;
+    top: 0;
+    overflow: auto;
+    background-image:
+      linear-gradient(rgba(black, 0.6), transparent);
+  }
+}
+
+@keyframes closeNav {
+  0% {
+    height: 100vh;
+    top: 0;
+    overflow: auto;
+    background-image:
+      linear-gradient(rgba(black, 0.6), transparent);
+  }
+
+  100% {
+    height: auto;
+    top: -100%;
+    background-image: none;
   }
 }

@@ -35,10 +35,21 @@
     }
   }
 
+  @media (max-width: $tablet-width-max) {
+    .price__title::after {
+      margin-right: 0;
+    }
+  }
+
   @media (max-width: $mobile-width-max) {
     min-width: auto;
     width: 180px;
     padding: 15px 30px;
+
+    .price__title::after {
+      margin-top: 2px;
+      margin-right: 10px;
+    }
   }
 }
 
