@@ -20,6 +20,8 @@
     .price__title::after {
       background-color: $light-grey-3;
       background-image: url("../images/arrow-down.svg");
+      margin-right: 10px;
+      transform: translate(1px);
     }
 
     &:hover,
@@ -33,6 +35,22 @@
     }
   }
 
+  @media (max-width: $tablet-width-max) {
+    .price__title::after {
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    min-width: auto;
+    width: 180px;
+    padding: 15px 30px;
+
+    .price__title::after {
+      margin-top: 2px;
+      margin-right: 10px;
+    }
+  }
 }
 
 .price__title {
@@ -57,6 +75,10 @@
     background-image: url("../images/arrow.svg");
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    font-size: 15px;
   }
 }
 
