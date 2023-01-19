@@ -1,7 +1,6 @@
 .prices__wrapper {
   display: flex;
   justify-content: space-between;
-
   margin: 0 auto;
   max-width: $desktop-width;
   padding: 40px $desktop-padding 129px;
@@ -10,6 +9,29 @@
   background-image: url("../images/leafs-2.png");
   background-repeat: no-repeat;
   background-position: calc(100% - 100px) calc(100% - 108px);
+
+  @media (max-width: $tablet-width-max) {
+    padding: 42px $tablet-padding 164px;
+    background-position: calc(100% - $tablet-padding + 10px) calc(100% - 81px);
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding: 25px $mobile-padding 40px;
+    flex-direction: column;
+    align-items: center;
+    background-image: none;
+  }
+}
+
+.prices__inner-prices {
+  @media (max-width: $tablet-width-max) {
+    margin-right: 20px;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin: 0;
+  }
 }
 
 .prices__inner-call-us {
@@ -17,6 +39,15 @@
   flex-direction: column;
   align-items: flex-end;
   max-width: 452px;
+
+  @media (max-width: $tablet-width-max) {
+    margin-top: 98.5px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-top: 19px;
+    max-width: 230px;
+  }
 }
 
 .prices__title {
@@ -27,6 +58,20 @@
   font-size: 40px;
   line-height: 48px;
   color: $black;
+
+  @media (max-width: $tablet-width-max) {
+    padding: 0 15px;
+    margin-bottom: 56px;
+    font-size: 35px;
+    line-height: 42px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-bottom: 37px;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+  }
 }
 
 .prices__list {
@@ -37,10 +82,23 @@
 
   border: 1px solid $light-grey;
   border-radius: 20px;
+
+  @media (max-width: $tablet-width-max) {
+    // margin-left: 3px;
+    transform: translateX(0);
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding: 29px 22px;
+  }
 }
 
 .prices__list-item + .prices__list-item {
   margin-top: 32px;
+
+  @media (max-width: $mobile-width-max) {
+    margin-top: 13px;
+  }
 }
 
 .prices__call-us-text {
@@ -54,6 +112,19 @@
 
   .prices__call-us-text-green {
     color: $green;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    font-size: 25px;
+    line-height: 35px;
+    margin-bottom: 28px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
   }
 }
 
@@ -73,6 +144,7 @@
   background-color: transparent;
   outline: none;
   transition: 0.3s;
+  cursor: pointer;
 
   &:hover,
   &:focus {
@@ -83,5 +155,12 @@
 
   &:active {
     opacity: 0.5;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin: 0 auto;
+    padding: 7px 24px 6px;
+    font-size: 15px;
+    line-height: 20px;
   }
 }

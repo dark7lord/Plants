@@ -12,6 +12,19 @@
   background-image: url("../images/contact_woman-1.png");
   background-repeat: no-repeat;
   background-position: calc($desktop-padding - 1px) bottom;
+
+  @media (max-width: $tablet-width-max) {
+    padding: 40px $tablet-padding 437px;
+    background-size: 200px 248.5px;
+    background-position: calc(50% + 10px) bottom;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    min-height: auto;
+    padding: 25px $mobile-padding 196px;
+    background-size: 100px auto;
+    background-position: calc(50% - 2px) bottom;
+  }
 }
 
 .contacts__title {
@@ -24,6 +37,18 @@
   line-height: 52px;
   color: $green;
   text-align: center;
+
+  @media (max-width: $tablet-width-max) {
+    transform: translateX(0);
+    margin-bottom: 98px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-bottom: 81px;
+    font-size: 25px;
+    line-height: 33px;
+    transform: translateX(-2px);
+  }
 }
 
 .contacts__selector {
@@ -31,6 +56,15 @@
   flex-direction: column;
   max-width: 450px;
   margin-left: auto;
+
+  @media (max-width: $tablet-width-max) {
+    margin: 0 auto;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    max-width: 300px;
+    transform: translate(-2px, 0);
+  }
 }
 
 .contacts__selector-button {
@@ -77,6 +111,14 @@
 
   &:active {
     opacity: 0.5;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding: 5px 20px 5px;
+
+    &::after {
+      margin-right: 0;
+    }
   }
 }
 
