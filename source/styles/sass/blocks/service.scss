@@ -73,13 +73,14 @@
 
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
 
   &:hover:not([disabled]),
   &:focus:not([disabled]),
   &--active {
     color: $white;
     background-color: $orange;
-    transition: color 0.3s;
+    transition: 0.3s;
     border-color: $white;
   }
 

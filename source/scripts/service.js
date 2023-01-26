@@ -16,7 +16,7 @@ const blurCards = (arrFocusCards) => {
     for (const card of cards) {
       if (!isFocusName(card)) {
         card.style.filter = 'blur(2px)';
-        card.style.transition = '0.5s'
+        card.style.transition = '0.3s'
       }
       else {
         card.style.filter = 'none';
@@ -51,7 +51,7 @@ const clickButtonHandler = (evt) => {
       activeButtons -= 1;
       btn.blur();
     }
-    
+
     if (activeButtons === MAX_ACTIVE) {
       [...findUnactive()].map(btn => btn.disabled = true);
     } else {

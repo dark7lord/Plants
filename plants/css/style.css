@@ -597,11 +597,12 @@ input[type=radio].visually-hidden {
   outline: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
 }
 .service__list-buttons-item:hover:not([disabled]), .service__list-buttons-item:focus:not([disabled]), .service__list-buttons-item--active {
   color: #ffffff;
   background-color: #e06733;
-  transition: color 0.3s;
+  transition: 0.3s;
   border-color: #ffffff;
 }
 .service__list-buttons-item[disabled] {
