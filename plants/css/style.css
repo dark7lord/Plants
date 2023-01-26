@@ -598,10 +598,26 @@ input[type=radio].visually-hidden {
   border-radius: 5px;
   cursor: pointer;
 }
-.service__list-buttons-item:hover, .service__list-buttons-item:focus {
+.service__list-buttons-item:hover:not([disabled]), .service__list-buttons-item:focus:not([disabled]), .service__list-buttons-item--active {
   color: #ffffff;
   background-color: #e06733;
   transition: color 0.3s;
+  border-color: #ffffff;
+}
+.service__list-buttons-item[disabled] {
+  color: #e06733;
+  border-color: #e3e1d5;
+  opacity: 0.5;
+  cursor: auto;
+}
+.service__list-buttons-item--active {
+  color: #ffffff;
+  background-color: #e06733;
+  transition: color 0.3s;
+}
+.service__list-buttons-item--active:hover, .service__list-buttons-item--active:focus {
+  border-color: #e06733;
+  transition: 0.3s;
 }
 .service__list-buttons-item:active {
   opacity: 0.5;
