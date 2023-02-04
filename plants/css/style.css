@@ -888,6 +888,7 @@ input[type=radio].visually-hidden {
 
 .price {
   min-width: 250px;
+  max-width: 250px;
   border-radius: 20px;
   padding: 15px 40px;
   box-sizing: border-box;
@@ -938,7 +939,8 @@ input[type=radio].visually-hidden {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
+  margin: -15px -40px;
+  padding: 15px 40px;
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
@@ -1107,6 +1109,7 @@ input[type=radio].visually-hidden {
   background-image: url("../images/arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
+  transition: 0.5s;
 }
 .contacts__selector-button:hover, .contacts__selector-button:focus {
   background-color: #c1e698;
@@ -1156,6 +1159,20 @@ input[type=radio].visually-hidden {
 
 .contacts__cities {
   margin-top: 60px;
+}
+
+.contacts__selector--active .contacts__selector-button {
+  box-shadow: none;
+  background-color: #c1e698;
+  transition: 0.3s;
+}
+.contacts__selector--active .contacts__list-cities {
+  display: flex;
+}
+.contacts__selector--active .contacts__selector-button::after {
+  background-color: #8ba07e;
+  transform: rotate(-180deg);
+  transition: 0.5s;
 }
 
 .city {

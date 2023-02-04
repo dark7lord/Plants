@@ -1,5 +1,6 @@
 .price {
   min-width: 250px;
+  max-width: 250px;
   border-radius: 20px;
   padding: 15px 40px;
   box-sizing: border-box;
@@ -57,7 +58,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
+  margin: -15px -40px;
+  padding: 15px 40px;
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
