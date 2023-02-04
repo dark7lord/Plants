@@ -908,7 +908,6 @@ input[type=radio].visually-hidden {
 .price--closed .price__title::after {
   background-color: #d9d9d9;
   background-image: url("../images/arrow-down.svg");
-  margin-right: 10px;
   transform: translate(1px);
 }
 .price--closed:hover, .price--closed:focus {
