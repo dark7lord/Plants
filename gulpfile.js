@@ -6,6 +6,7 @@ import rename from 'gulp-rename';
 import svgstore from 'gulp-svgstore';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
+import concat from 'gulp-concat';
 const sass = gulpSass(dartSass);
 
 // HTML
@@ -33,7 +34,8 @@ export const styles = () => {
 // Scripts
 
 export const scripts = () => {
-  return gulp.src(`${src}/scripts/index.js`)
+  return gulp.src(`${src}/scripts/*.js`)
+    .pipe(concat('index.js'))
     .pipe(babel({
       presets: ['@babel/preset-env']
     }))

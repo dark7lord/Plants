@@ -597,11 +597,28 @@ input[type=radio].visually-hidden {
   outline: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
 }
-.service__list-buttons-item:hover, .service__list-buttons-item:focus {
+.service__list-buttons-item:hover:not([disabled]), .service__list-buttons-item:focus:not([disabled]), .service__list-buttons-item--active {
+  color: #ffffff;
+  background-color: #e06733;
+  transition: 0.3s;
+  border-color: #ffffff;
+}
+.service__list-buttons-item[disabled] {
+  color: #e06733;
+  border-color: #e3e1d5;
+  opacity: 0.5;
+  cursor: auto;
+}
+.service__list-buttons-item--active {
   color: #ffffff;
   background-color: #e06733;
   transition: color 0.3s;
+}
+.service__list-buttons-item--active:hover, .service__list-buttons-item--active:focus {
+  border-color: #e06733;
+  transition: 0.3s;
 }
 .service__list-buttons-item:active {
   opacity: 0.5;
@@ -871,6 +888,7 @@ input[type=radio].visually-hidden {
 
 .price {
   min-width: 250px;
+  max-width: 250px;
   border-radius: 20px;
   padding: 15px 40px;
   box-sizing: border-box;
@@ -890,7 +908,6 @@ input[type=radio].visually-hidden {
 .price--closed .price__title::after {
   background-color: #d9d9d9;
   background-image: url("../images/arrow-down.svg");
-  margin-right: 10px;
   transform: translate(1px);
 }
 .price--closed:hover, .price--closed:focus {
@@ -921,7 +938,8 @@ input[type=radio].visually-hidden {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
+  margin: -15px -40px;
+  padding: 15px 40px;
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
@@ -1090,6 +1108,7 @@ input[type=radio].visually-hidden {
   background-image: url("../images/arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
+  transition: 0.5s;
 }
 .contacts__selector-button:hover, .contacts__selector-button:focus {
   background-color: #c1e698;
@@ -1139,6 +1158,20 @@ input[type=radio].visually-hidden {
 
 .contacts__cities {
   margin-top: 60px;
+}
+
+.contacts__selector--active .contacts__selector-button {
+  box-shadow: none;
+  background-color: #c1e698;
+  transition: 0.3s;
+}
+.contacts__selector--active .contacts__list-cities {
+  display: flex;
+}
+.contacts__selector--active .contacts__selector-button::after {
+  background-color: #8ba07e;
+  transform: rotate(-180deg);
+  transition: 0.5s;
 }
 
 .city {

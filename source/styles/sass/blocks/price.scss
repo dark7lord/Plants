@@ -1,5 +1,6 @@
 .price {
   min-width: 250px;
+  max-width: 250px;
   border-radius: 20px;
   padding: 15px 40px;
   box-sizing: border-box;
@@ -20,7 +21,7 @@
     .price__title::after {
       background-color: $light-grey-3;
       background-image: url("../images/arrow-down.svg");
-      margin-right: 10px;
+      // margin-right: 10px;
       transform: translate(1px);
     }
 
@@ -57,7 +58,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
+  margin: -15px -40px;
+  padding: 15px 40px;
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
